@@ -15,7 +15,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//author routes
 Route::post('/author', 'AuthorsController@store');
+
+//book routes
 Route::post('/books', 'BooksController@store');
 Route::patch('/books/{book}', 'BooksController@update');
 Route::delete('/books/{book}', 'BooksController@destroy');
+
+//book reserve routes
+Route::post('/checkout/{book}', 'CheckoutBooksController@store');
+Route::post('/checkin/{book}', 'CheckinBooksController@store');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
