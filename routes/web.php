@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 //author routes
-Route::post('/author', 'AuthorsController@store');
+Route::post('/authors', 'AuthorsController@store');
 
 //book routes
 Route::post('/books', 'BooksController@store');
